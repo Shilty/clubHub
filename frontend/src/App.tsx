@@ -1,20 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Clubs from './pages/Clubs';
+import AdminPanel from './pages/AdminPanel';
+import Profile from './pages/Profile';
 
-function App() {
-  return (
-      <div style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-        fontSize: '3rem',
-        fontWeight: 'bold'
-      }}>
-        WIP
-      </div>
-  );
-}
+const App: React.FC = () => {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/clubs" element={<Clubs />} />
+                <Route path="/admin" element={<AdminPanel />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="*" element={<div>Page not found</div>} />
+            </Routes>
+        </Router>
+    );
+};
 
 export default App;
