@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Clubs from './pages/Clubs';
-import AdminPanel from './pages/AdminPanel';
-import Profile from './pages/Profile';
+import Home from './pages/Home/Home';
+import Clubs from './pages/Clubs/Clubs';
+import AdminPanel from './pages/AdminPanel/AdminPanel';
+import Profile from './pages/Profile/Profile';
+import Colors from './pages/Colors/Colors';
 
 const App: React.FC = () => {
     return (
@@ -13,6 +14,7 @@ const App: React.FC = () => {
                 <Route path="/clubs" element={<Clubs />} />
                 <Route path="/admin" element={<AdminPanel />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/colors" element={<Colors />} />
                 <Route path="*" element={<div>Page not found</div>} />
             </Routes>
         </Router>

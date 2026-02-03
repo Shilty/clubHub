@@ -19,6 +19,9 @@ const Home: React.FC = () => {
                 <li>
                     <Link to="/admin">Admin Panel</Link>
                 </li>
+                <li>
+                    <Link to="/colors">Color pallette</Link>
+                </li>
             </ul>
         </div>
     );
