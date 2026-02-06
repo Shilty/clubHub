@@ -1,22 +1,28 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home/Home';
-import Clubs from './pages/Clubs/Clubs';
-import AdminPanel from './pages/AdminPanel/AdminPanel';
-import Profile from './pages/Profile/Profile';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Sidebar from './components/Sidebar';
+import Header from './components/Header';
+import Home from './pages/Home';
 
-const App: React.FC = () => {
+function App() {
     return (
+
         <Router>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/clubs" element={<Clubs />} />
-                <Route path="/admin" element={<AdminPanel />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="*" element={<div>Page not found</div>} />
-            </Routes>
+            <div id="wrapper">
+                <div id="main">
+                    <div className="inner">
+                        <Header/>
+                        <Routes>
+                            <Route path="/" element={<Home/>}/>
+                            <Route path="*" element={<div>Pagina nu a fost găsită (404)</div>}/>
+                        </Routes>
+                    </div>
+                </div>
+
+                <Sidebar/>
+            </div>
         </Router>
     );
-};
+}
 
 export default App;
