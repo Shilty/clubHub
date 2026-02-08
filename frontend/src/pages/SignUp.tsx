@@ -1,21 +1,24 @@
 ﻿import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import registerPhoto from '../images/loginPhoto.jpg';
+import registerPhoto from '../images/loginPhoto.jpg'; // same image as login
 
 const SignUp: React.FC = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [error, setError] = useState('');
 
     const handleRegister = (e: React.FormEvent) => {
         e.preventDefault();
-        // fake registration logic
+
         if (password !== confirmPassword) {
-            alert('Passwords do not match!');
+            setError('Passwords do not match');
             return;
         }
+
+        setError('');
         alert('Registered successfully!');
-        // Here could redirect or set a logged-in user
+        // You could set the logged-in user here or redirect
     };
 
     return (
@@ -54,14 +57,17 @@ const SignUp: React.FC = () => {
                             className="w-full p-3 rounded border border-input-border focus:border-input-focus"
                             required
                         />
-                        <input
-                            type="password"
-                            placeholder="Confirm Password"
-                            value={confirmPassword}
-                            onChange={(e) => setConfirmPassword(e.target.value)}
-                            className="w-full p-3 rounded border border-input-border focus:border-input-focus"
-                            required
-                        />
+                        <div className="space-y-1">
+                            <input
+                                type="password"
+                                placeholder="Confirm Password"
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                className="w-full p-3 rounded border border-input-border focus:border-input-focus"
+                                required
+                            />
+                            {error && <p className="text-red-500 text-sm">{error}</p>}
+                        </div>
 
                         <button
                             type="submit"

@@ -61,7 +61,7 @@ const Header: React.FC<HeaderProps> = ({ loggedInUser, setLoggedInUser }) => {
                         <span className="hidden md:inline">{loggedInUser.username}</span>
 
                         {dropdownOpen && (
-                            <ul className="absolute right-0 top-full mt-2 w-48 bg-gray-800 rounded shadow-lg py-2 text-sm">
+                            <ul className="absolute right-0 top-full w-48 bg-gray-800 rounded shadow-lg py-2 text-sm">
                                 <li className="px-4 py-1 border-b border-gray-700">Role: {loggedInUser.role}</li>
                                 <li>
                                     <Link

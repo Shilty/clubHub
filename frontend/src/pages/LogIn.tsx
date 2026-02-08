@@ -1,5 +1,5 @@
 ﻿import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import loginPhoto from '../images/loginPhoto.jpg';
 
 interface LogInProps {
@@ -10,30 +10,34 @@ const LogIn: React.FC<LogInProps> = ({ setLoggedInUser }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
+    const navigate = useNavigate();
 
     const handleLogin = (e: React.FormEvent) => {
         e.preventDefault();
         // simple fake login
         if (username === 'user' && password === '1234') {
             setLoggedInUser({ username, password, role: 'user' });
+            navigate('/home-logged');
         }
     };
 
     return (
-        <div className="flex min-h-screen">
+        <div className="flex min-h-screen w-full">
             {/* Left photo */}
-            <div className="w-1/2 hidden md:block">
+            <div className="hidden md:flex md:w-1/2 flex-shrink-0">
                 <img
                     src={loginPhoto}
                     alt="Login"
-                    className="object-cover w-full h-full"
+                    className="object-cover w-full h-screen"
                 />
             </div>
 
             {/* Right form */}
-            <div className="w-full md:w-1/2 flex items-center justify-center bg-bg-primary p-8">
+            <div className="flex-1 flex items-center justify-center bg-bg-primary p-8">
                 <div className="max-w-md w-full space-y-8">
-                    <h2 className="text-3xl font-bold text-text-primary">Welcome Back to ClubHub</h2>
+                    <h2 className="text-3xl font-bold text-text-primary">
+                        Welcome Back to ClubHub
+                    </h2>
                     <p className="text-text-secondary">
                         Please log in to your account
                     </p>
@@ -70,7 +74,7 @@ const LogIn: React.FC<LogInProps> = ({ setLoggedInUser }) => {
 
                             <button
                                 type="button"
-                                className={`text-button-orange hover:underline 'opacity-100'`}
+                                className="text-button-orange hover:underline"
                             >
                                 Forgot Password?
                             </button>
