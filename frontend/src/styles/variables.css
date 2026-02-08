@@ -1,0 +1,26 @@
+﻿:root {
+    /* Backgrounds */
+    --bg-primary: #f9fafb;      /* Very light gray */
+    --bg-secondary: #e5e7eb;    /* Light cool gray */
+
+    /* Text */
+    --text-primary: #1e293b;    /* Dark blue-gray */
+    --text-secondary: rgba(30, 41, 59, 0.7); /* 70% opacity */
+    --text-inverse: #f9fafb;    /* Very light gray */
+
+    /* Buttons & CTA */
+    --color-orange: #f97316;    /* Orange */
+    --orange-hover: #ea6b0f;
+    --orange-disabled: rgba(249, 115, 22, 0.4);
+
+    /* Secondary Button */
+    --dark-button-bg: #1e293b;
+    --dark-button-hover: #283548;
+
+    /* Forms & Inputs */
+    --input-border: rgba(30, 41, 59, 0.3);
+    --input-focus: #f97316;
+
+    /* Cards & surfaces */
+    --card-border: rgba(30, 41, 59, 0.2);
+}

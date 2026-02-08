@@ -1,46 +1,36 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
-    "./index.html",           // Vite entry HTML
-    "./src/**/*.{js,ts,jsx,tsx}" // All React/TS files
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
         bg: {
-          primary: "#f2f5f4",       // very light gray
-          secondary: "#cfd6db",     // light cool gray
+          primary: 'var(--bg-primary)',
+          secondary: 'var(--bg-secondary)',
         },
         text: {
-          primary: "#273742",       // dark blue-gray
-          muted: "rgba(39, 55, 66, 0.7)",
-          placeholder: "rgba(39, 55, 66, 0.5)",
-          inverse: "#f2f5f4",
+          primary: 'var(--text-primary)',
+          secondary: 'var(--text-secondary)',
+          inverse: 'var(--text-inverse)',
         },
-        accent: "#ffa35c",           // orange
-        border: {
-          DEFAULT: "rgba(39, 55, 66, 0.2)",
-          focus: "#ffa35c",
+        button: {
+          orange: 'var(--color-orange)',
+          orangeHover: 'var(--orange-hover)',
+          orangeDisabled: 'var(--orange-disabled)',
+          dark: 'var(--dark-button-bg)',
+          darkHover: 'var(--dark-button-hover)',
         },
-        btn: {// button
-          primary: {
-            bg: "#ffa35c",
-            text: "#f2f5f4",
-          },
-          secondary: {
-            bg: "#273742",
-            text: "#f2f5f4",
-          },
+        input: {
+          border: 'var(--input-border)',
+          focus: 'var(--input-focus)',
         },
-      },
-      brightness: {
-        hover: "0.95",
-        active: "0.9",
-      },
-      opacity: {
-        disabled: "0.4",
+        card: {
+          border: 'var(--card-border)',
+        }
       },
     },
   },
   plugins: [],
-}
+};
